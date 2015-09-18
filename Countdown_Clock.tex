@@ -28,7 +28,7 @@
 % without further effort on your part as the last section in
 % the body of your article BEFORE References or any Appendices.
 
-\numberofauthors{8} %  in this sample file, there are a *total*
+\numberofauthors{1} %  in this sample file, there are a *total*
 % of EIGHT authors. SIX appear on the 'first-page' (for formatting
 % reasons) and the remaining two appear in the \additionalauthors section.
 %
@@ -90,22 +90,21 @@ Chun-Yen Hsu\\
 % author on the opening page (as the 'third row') but we ask,
 % for aesthetic reasons that you place these 'additional authors'
 % in the \additional authors block, viz.
-\additionalauthors{Additional authors: John Smith (The Th{\o}rv{\"a}ld Group,
-email: {\texttt{jsmith@affiliation.org}}) and Julius P.~Kumquat
-(The Kumquat Consortium, email: {\texttt{jpkumquat@consortium.net}}).}
-\date{30 July 1999}
+% \additionalauthors{Additional authors: John Smith (The Th{\o}rv{\"a}ld Group,
+% email: {\texttt{jsmith@affiliation.org}}) and Julius P.~Kumquat
+% (The Kumquat Consortium, email: {\texttt{jpkumquat@consortium.net}}).}
+% \date{30 July 1999}
 % Just remember to make sure that the TOTAL number of authors
 % is the number that will appear on the first page PLUS the
 % number that will appear in the \additionalauthors section.
 
 \maketitle
 \begin{abstract}
-abstract
+
+
 \end{abstract}
 
 \section{Introduction}
-
-Sections go here.  An example of figures is shown in Figure~\ref{fig:example}.
 
 % Countdown clock 1. 方便 2. 可以選擇時間按下開始後計時 3. 
 % However//在某些限制多的環境下不需要
@@ -114,24 +113,47 @@ Sections go here.  An example of figures is shown in Figure~\ref{fig:example}.
 % We present
 % 在廚房內如果需要為了接觸電子器材而一直洗手將使人感到厭煩且煮飯的效率會大大降低
 % 簡單操作介面
-Countdown clock provides the time choice function for users to select how long times we want to count. After the countdown time is decided, we can press the "Start" button and it will start counting down the time. However, under some restrictive circumstances, such as cooking with greasy hands and tight cooking timeslot, we still want a countdown clock to help us calculate the time with few interruption. This paper designs a new convenient count
+Countdown clock provides the time choice function for users to select how long times we want to count. After the time is decided, we can press the "Start" button and the clock will start counting down the time. However, under some restrictive circumstances, such as cooking with greasy hands and tight cooking timeslot, or doing heavy metal lab experiments which require highly concentration to the work, 
+too many methods of operation or buttons would decrease users' working efficiency. Besides, grease or heavy metal ingredients on our hand would let us feel anguished to touch expensive electronic countdown clock, such as our smartphone. 
 
+We present an intuitive countdown clock, which lesson the manipulation to only one button for adding one minute in each operation. We simplify clock's user interface and operation methods in order to give users an intuitive way to control the clock. Also, Whenever user press the button to add the time, the countdown clock will start counting time automatically without using a "Start" button. When time is up, the LCD display would flickers four times in order to tell users and catch users' attention. In addition, this countdown clock provides highly surface protection in order to against various potential threat ingredient from users' hands. 
+
+Conclusion
+ 
+one minute for each operation with. 
+
+Evaluation: 1 minute
+Restriction: less technique skill and funding
 
 % 重複又無意義的動作使人厭煩, 工作
 
+\section{Evaluation}
+The reason why we choose one minute for each button pressed is because we think the most important factor for the problem is to let users feel convenient and comfortable while using countdown clock. Additionally, one minute for each unit is not too much or not too little in most cases. We believe that users seldom have to count an unique time slot, such as 23 seconds.
+
+\section{Restriction}
+We use Arduino board to implement this 
+
+% \begin{figure}
+% \centering
+% \epsfig{file=fly.eps}
+% \caption{A sample black and white graphic (.eps format).}
+% \label{fig:example}
+% \end{figure}
+
 \begin{figure}
-\centering
-\epsfig{file=fly.eps}
-\caption{A sample black and white graphic (.eps format).}
-\label{fig:example}
+  \centering
+  \includegraphics[width=0.5\linewidth]{Figures/demo1.png}
+  \caption{Intuitive Coundown Clock}
+  \label{fig:Figure1}
 \end{figure}
 
 \section{Conclusions}
-Conclusion goes here.
+Users may face various restriction while using count down clock during their life, such as hand greasy or dirty. However, people still require a countdown clock to help them not merely calculate the time, but also provide them a convenient user interface with less manipulation and few interruption. 
+
 
 %ACKNOWLEDGMENTS are optional
-\section*{Acknowledgments}
-Acknowledgement goes here.
+% \section*{Acknowledgments}
+% Acknowledgement goes here.
 
 %
 % The following two commands are all you need in the
@@ -148,10 +170,10 @@ Acknowledgement goes here.
 %
 %APPENDICES are optional
 %\balancecolumns
-\appendix
+% \appendix
 %Appendix A
 
-Appendix goes here.
+% Appendix goes here.
 
 % That's all folks!
 \end{document}
