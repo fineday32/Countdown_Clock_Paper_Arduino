@@ -2,8 +2,7 @@
 
 \begin{document}
 
-\title{A Sample {\ttlit ACM} SIG Proceedings Paper in LaTeX
-Format\titlenote{(Does NOT produce the permission block, copyright information nor page numbering). Supported by ACM.}}
+\title{Touchless Countdown Clock: No Soiled Interface Anymore }
 %
 % You need the command \numberofauthors to handle the 'placement
 % and alignment' of the authors beneath the title.
@@ -29,7 +28,7 @@ Format\titlenote{(Does NOT produce the permission block, copyright information n
 % without further effort on your part as the last section in
 % the body of your article BEFORE References or any Appendices.
 
-\numberofauthors{8} %  in this sample file, there are a *total*
+\numberofauthors{1} %  in this sample file, there are a *total*
 % of EIGHT authors. SIX appear on the 'first-page' (for formatting
 % reasons) and the remaining two appear in the \additionalauthors section.
 %
@@ -46,45 +45,51 @@ Format\titlenote{(Does NOT produce the permission block, copyright information n
 %
 % 1st. author
 \alignauthor
-Ben Trovato\titlenote{Dr.~Trovato insisted his name be first.}\\
-       \affaddr{Institute for Clarity in Documentation}\\
-       \affaddr{1932 Wallamaloo Lane}\\
-       \affaddr{Wallamaloo, New Zealand}\\
-       \email{trovato@corporation.com}
-% 2nd. author
-\alignauthor
-G.K.M. Tobin\titlenote{The secretary disavows
-any knowledge of this author's actions.}\\
-       \affaddr{Institute for Clarity in Documentation}\\
-       \affaddr{P.O. Box 1212}\\
-       \affaddr{Dublin, Ohio 43017-6221}\\
-       \email{webmaster@marysville-ohio.com}
-% 3rd. author
-\alignauthor Lars Th{\o}rv{\"a}ld\titlenote{This author is the
-one who did all the really hard work.}\\
-       \affaddr{The Th{\o}rv{\"a}ld Group}\\
-       \affaddr{1 Th{\o}rv{\"a}ld Circle}\\
-       \affaddr{Hekla, Iceland}\\
-       \email{larst@affiliation.org}
-\and  % use '\and' if you need 'another row' of author names
-% 4th. author
-\alignauthor Lawrence P. Leipuner\\
-       \affaddr{Brookhaven Laboratories}\\
-       \affaddr{Brookhaven National Lab}\\
-       \affaddr{P.O. Box 5000}\\
-       \email{lleipuner@researchlabs.org}
-% 5th. author
-\alignauthor Sean Fogarty\\
-       \affaddr{NASA Ames Research Center}\\
-       \affaddr{Moffett Field}\\
-       \affaddr{California 94035}\\
-       \email{fogartys@amesres.org}
-% 6th. author
-\alignauthor Charles Palmer\\
-       \affaddr{Palmer Research Laboratories}\\
-       \affaddr{8600 Datapoint Drive}\\
-       \affaddr{San Antonio, Texas 78229}\\
-       \email{cpalmer@prl.com}
+Chun-Yen Hsu\\
+       % \titlenote{Dr.~Trovato insisted his name be first.}\\
+       \affaddr{Carnegie Mellon University}\\
+       \affaddr{94035 Mountain View}\\
+       \affaddr{California, USA}\\
+       \email{chunyenh@andrew.cmu.edu}
+% Ben Trovato\titlenote{Dr.~Trovato insisted his name be first.}\\
+%        \affaddr{Institute for Clarity in Documentation}\\
+%        \affaddr{1932 Wallamaloo Lane}\\
+%        \affaddr{Wallamaloo, New Zealand}\\
+%        \email{trovato@corporation.com}
+% % 2nd. author
+% \alignauthor
+% G.K.M. Tobin\titlenote{The secretary disavows
+% any knowledge of this author's actions.}\\
+%        \affaddr{Institute for Clarity in Documentation}\\
+%        \affaddr{P.O. Box 1212}\\
+%        \affaddr{Dublin, Ohio 43017-6221}\\
+%        \email{webmaster@marysville-ohio.com}
+% % 3rd. author
+% \alignauthor Lars Th{\o}rv{\"a}ld\titlenote{This author is the
+% one who did all the really hard work.}\\
+%        \affaddr{The Th{\o}rv{\"a}ld Group}\\
+%        \affaddr{1 Th{\o}rv{\"a}ld Circle}\\
+%        \affaddr{Hekla, Iceland}\\
+%        \email{larst@affiliation.org}
+% \and  % use '\and' if you need 'another row' of author names
+% % 4th. author
+% \alignauthor Lawrence P. Leipuner\\
+%        \affaddr{Brookhaven Laboratories}\\
+%        \affaddr{Brookhaven National Lab}\\
+%        \affaddr{P.O. Box 5000}\\
+%        \email{lleipuner@researchlabs.org}
+% % 5th. author
+% \alignauthor Sean Fogarty\\
+%        \affaddr{NASA Ames Research Center}\\
+%        \affaddr{Moffett Field}\\
+%        \affaddr{California 94035}\\
+%        \email{fogartys@amesres.org}
+% % 6th. author
+% \alignauthor Charles Palmer\\
+%        \affaddr{Palmer Research Laboratories}\\
+%        \affaddr{8600 Datapoint Drive}\\
+%        \affaddr{San Antonio, Texas 78229}\\
+       % \email{cpalmer@prl.com}
 }
 % There's nothing stopping you putting the seventh, eighth, etc.
 % author on the opening page (as the 'third row') but we ask,
@@ -101,27 +106,50 @@ email: {\texttt{jsmith@affiliation.org}}) and Julius P.~Kumquat
 \maketitle
 \begin{abstract}
 
-This sample.tex file is modified from the sigproc-sp.tex file supported by ACM, serving as a simple example of the tex file used for IPSN'13 submissions.
-
+We present an touchless countdown clock that provides an innovative interactive way for users to set clock without actually touching the display.
 \end{abstract}
 
 \section{Introduction}
 
-Sections go here.  An example of figures is shown in Figure~\ref{fig:example}.
+Traditional countdown clock provides the time choice function with physical button for users to select how long times we want to count. After the time is decided, we can press the "start" button then the clock start counting down the time. However, under some restrictive circumstances, such as performing surgeon which requires undust hand and is prohibited to touch unnecessary things, or cooking with greasy hands but still need to use countdown clock for keeping time, buttons would not be a good way to let users interact with the clock. 
+% Besides, grease or heavy metal ingredients on our hand would let us feel anguished to touch expensive clock devices.
+
+We present touchless countdown clock(Figure \ref{fig:demo1}), which utilize light sensor with high-sensitivity photodiode to implement touchless function as an innovative human interface application with no physical contact necessary.
+Light sensor would detect whether users' hand appears in front of the device. Whenever it finds the hand shake, it will add one minute to the countdown clock and start counting the time automatically. This implementation can definitely solve the problem that user does not require to touch the clock anymore. Touchless function not only simplifies the manipulation interface but it release the user restriction under certain environment limitation.
+ 
+
+% innovative touchless human interface applications
+% The high-sensitivity infrared photodiode provides a single-pulse infrared proximity measurement, offering customers an opportunity to implement a proximity and ambient light sensor with very low power levels.
+
+
+% \begin{figure}
+% \centering
+% \epsfig{file=fly.eps}
+% \caption{A sample black and white graphic (.eps format).}
+% \label{fig:example}
+% \end{figure}
 
 \begin{figure}
-\centering
-\epsfig{file=fly.eps}
-\caption{A sample black and white graphic (.eps format).}
-\label{fig:example}
+  \centering
+  \includegraphics[width=0.9\linewidth]{Figures/demo1.jpg}
+  \caption{Touchless Countdown Clock with light sensor at the left of the figure}
+  \label{fig:demo1}
 \end{figure}
+
+\section{Related Work}
+We found a research work Touchless Circular menus\cite{cite1}, which explores touchless interaction in diverse usage contexts, such as interacting with public displays where mouse and keyboards are inconvenient. This idea is also ideal to face our problem that can be used as activating kitchen devices without touching them with dirty hands.
+
+%%Citation Abstract
+% Researchers are exploring touchless interactions in diverse usage contexts. These include interacting with public displays, where mouse and keyboards are inconvenient, activating kitchen devices without touching them with dirty hands, or supporting surgeons in browsing medical images in a sterile operating room. 
+% Unlike traditional visual interfaces, however, touchless systems still lack a standardized user interface language for basic command selection (e.g., menus). Prior research proposed touchless menus that require users to comply strictly with system-defined postures (e.g., grab, finger-count, pinch). These approaches are problematic because they are analogous to command-line interfaces: users need to remember an interaction vocabulary and input a pre-defined symbol (via gesture or command). To overcome this problem, we introduce and evaluate Touchless Circular Menus (TCM)---a touchless menu system optimized for large displays, which enables users to make simple directional movements for selecting commands. TCM utilize our abilities to make mid-air directional strokes, relieve users from learning posture-based commands, and shift the interaction complexity from users' input to the visual interface. In a controlled study (N=15), when compared with contextual linear menus using grab gestures, participants using TCM were more than two times faster in selecting commands and perceived lower workload. However, users made more command-selection errors with TCM than with linear menus. The menu's triggering location on the visual interface significantly affected the effectiveness and efficiency of TCM. Our contribution informs the design of intuitive UIs for touchless interactions with large displays.
+
 
 \section{Conclusions}
 Conclusion goes here.
 
 %ACKNOWLEDGMENTS are optional
-\section*{Acknowledgments}
-Acknowledgement goes here.
+% \section*{Acknowledgments}
+% Acknowledgement goes here.
 
 %
 % The following two commands are all you need in the
@@ -138,10 +166,10 @@ Acknowledgement goes here.
 %
 %APPENDICES are optional
 %\balancecolumns
-\appendix
+% \appendix
 %Appendix A
 
-Appendix goes here.
+% Appendix goes here.
 
 % That's all folks!
 \end{document}
