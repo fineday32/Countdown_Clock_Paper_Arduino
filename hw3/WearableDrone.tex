@@ -2,7 +2,7 @@
 
 \begin{document}
 
-\title{Selfie Liberator - Touchless Camera Control by Using Wearable Quadcopter}
+\title{Selfie Liberator - Touchless Camera Control by Using Trasformed Quadcopter}
 %
 % You need the command \numberofauthors to handle the 'placement
 % and alignment' of the authors beneath the title.
@@ -106,13 +106,27 @@ email: {\texttt{jsmith@affiliation.org}}) and Julius P.~Kumquat
 \maketitle
 \begin{abstract}
 
-Abstract
+We design Selfie Liberator, a wearable quadcopter that can control camera direction by hand gesture and fastens on the arm with no personal carry burden in order to provide user a better and convenient experience while taking selfie.
 
 \end{abstract}
 
+% problem:
+% 1. selfie stick
+%        1.1 bad technique
+%        1.2 bring it 
+% 2. front camera
+%        1.1 bad resolution
+% Both: cant not make bigger distance       
+
+% connected by bluebooth
+
+
 \section{Introduction}
 
-Introduction 
+With today's demand of selfie, there are several products and innovation ideas that let us take selfie easily. For example, we can see tons of smartphones and tablets provide front camera which provide users an simple way to take selfie. Another example such as selfie stick can also give user a better photograph after taking the selfie. However, there are still several points that we can improve to approach better user experience. Because of the cost consideration, smartphone manufacturers seldom provides great resolution camera for the phone's front camera. The front camera would have less resolution and worse technique than the back camera in most cases. In addition, camera on the phone can not provide a broader view because of our hand length limitation. Selfie stick can solve the problem of hand length limitation. Nevertheless, it still results in several problems. For instance, users would not be willing to bring one more thing just because of taking selfie. 
+
+We present Selfie Liberator which provides a wearable camera by using the idea of quadcopter. We transfer the quadcopter with four arms that can be twisted to fasten on user's arm. A high resolution camera is embedded in Selfie Liberator and can also track user's gesture by using computer vision technique. Whenever using it, user can just flick it off from user's arm and let it fly away by itself. In addition, Selfie Liberator will fly back by itself after each selfie taken. Selfie Liberator not only solve the problem of the limitation of human hand length which can not take photograph with enough broad view but also provide user easier way to bring which can just fasten on user's arm with no additional personal carry required.
+After analyzing our 22 user cases, results show that Selfie Liberator can significantly provide better user experience while taking selfie and produce better photograph comparing to selfie stick and smartphone front camera.
 
 
 % \begin{figure}
@@ -122,22 +136,20 @@ Introduction
 % \label{fig:example}
 % \end{figure}
 
-% \begin{figure}
-%   \centering
-%   \includegraphics[width=0.8\linewidth]{Figures/demo1.jpg}
-%   \caption{Touchless Countdown Clock with light sensor at the left of the figure}
-%   \label{fig:demo1}
-% \end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\linewidth]{Figures/demo1.pdf}
+  \caption{Touchless Countdown Clock with light sensor at the left of the figure}
+  \label{fig:demo1}
+\end{figure}
 
 \section{Related Work}
-Related Work
+Mueller's quadcopter work\cite{cite1} focuses on creating robotic systems to support exertion experiences, which also has the same idea with our design. Selfie Liberator is also used at outdoor activity and provide infinite quadcopter usage possibility for future research work.
 
-%%Citation Abstract
-% Researchers are exploring touchless interactions in diverse usage contexts. These include interacting with public displays, where mouse and keyboards are inconvenient, activating kitchen devices without touching them with dirty hands, or supporting surgeons in browsing medical images in a sterile operating room. 
-% Unlike traditional visual interfaces, however, touchless systems still lack a standardized user interface language for basic command selection (e.g., menus). Prior research proposed touchless menus that require users to comply strictly with system-defined postures (e.g., grab, finger-count, pinch). These approaches are problematic because they are analogous to command-line interfaces: users need to remember an interaction vocabulary and input a pre-defined symbol (via gesture or command). To overcome this problem, we introduce and evaluate Touchless Circular Menus (TCM)---a touchless menu system optimized for large displays, which enables users to make simple directional movements for selecting commands. TCM utilize our abilities to make mid-air directional strokes, relieve users from learning posture-based commands, and shift the interaction complexity from users' input to the visual interface. In a controlled study (N=15), when compared with contextual linear menus using grab gestures, participants using TCM were more than two times faster in selecting commands and perceived lower workload. However, users made more command-selection errors with TCM than with linear menus. The menu's triggering location on the visual interface significantly affected the effectiveness and efficiency of TCM. Our contribution informs the design of intuitive UIs for touchless interactions with large displays.
+% Jogging is a popular exertion activity. The abundance of jogging apps suggests to us that joggers can appreciate the opportunity for technology to support the jogging experience. We want to take this investigation a step further by exploring if, and how, robotic systems can support the jogging experience. We designed and built a flying robotic system, a quadcopter, as a jogging companion and studied its use with 13 individual joggers. By analyzing their experiences, we derived three design dimensions that describe a design space for flying robotic jogging companions: Perceived Control, Focus and Bodily Interaction. Additionally, we articulate a series of design tactics, described by these dimensions, to guide the design of future systems. With this work we hope to inspire and guide designers interested in creating robotic systems to support exertion experiences.
 
-\section{Evaluation and Limitation}
-Evaluation
+% \section{Evaluation and Limitation}
+% Evaluation
 % For example, user can not add the time by using light sensor in a dark room. This approach is the next challenge we are going to face.
 
 \section{Conclusions}
