@@ -48,7 +48,7 @@
 %
 \alignauthor Chun-Yen Hsu, Yu-Liang Hsu, Takuma Oda\\
 \affaddr{Carnegie Mellon University} \\ {94035 Mountain View}\\{California, USA}\\
-\email{\{chunyenh,yuliangh\}@andrew.cmu.edu,\\ takuma.oda@sv.cmu.edu}
+\email{\{chunyenh,yuliangh\}@andrew.cmu.edu\\ takuma.oda@sv.cmu.edu}
 % 1st. author
 % \alignauthor
 % Chun-Yen Hsu\\
@@ -110,7 +110,7 @@ email: {\texttt{jsmith@affiliation.org}}) and Julius P.~Kumquat
 \maketitle
 \begin{abstract}
 
-In this paper, we present a classroom usage detection system. We put vibration sensors on each table in the room to detect the usage of a room. Due to heavy usage study table requirement in our campus, it’s hard to find an available seat to study. We also want to save the energy when the room is vacant. Therefore we developed “Classroom Usage Detection System”. There are 3 major steps of detecting the usage: vibration sensing, table event detection and event counting. We used several different methods to analyze the data: sequential detection model (SD), event counting model (EC) and filtered event counting model (FEC). Our system got 98\% accuracy when there someone using the table. And with approximately 83\% accuracy when there is nobody using the table.
+In this paper, we present a classroom usage detection system. We put vibration sensors on each table in the room to detect the usage of a room. Due to heavy usage study table requirement in our campus, it's hard to find an available seat to study. We also want to save the energy when the room is vacant. Therefore we developed "Classroom Usage Detection System". There are 3 major steps of detecting the usage: vibration sensing, table event detection and event counting. We used several different methods to analyze the data: sequential detection model (SD), event counting model (EC) and filtered event counting model (FEC). Our system got 98\% accuracy when there someone using the table. And with approximately 83\% accuracy when there is nobody using the table.
 
 
 
@@ -118,21 +118,21 @@ In this paper, we present a classroom usage detection system. We put vibration s
 
 \section{Introduction}
 
-Heavy course workload and the pressure of finding a job make extremely high study room demand for graduate students in Carnegie Mellon University. Students usually need a great and quiet study environment not only for less noise from others but also for higher learning efficiency. However, due to the large amount of demand, students can only search for study room one by one for the sake of an available seat to read, which consumes lots of unnecessary time. In the worst case, students are not able to find a place to study. Also, students often forget to turn off the light and the heater or air conditioner after they leave the room. Saving energy is critical for our environment. 
+Heavy course workload and the pressure of finding a job make extremely high study room demand for graduate students in Carnegie Mellon University. Students usually need a great and quiet study environment not only for less noise from others but also for higher learning efficiency. However, due to the large amount of demand, students can only search for study room one by one for the sake of an available seat to read, which consumes lots of unnecessary time. In the worst case, students are not able to find a place to study. Also, students often forget to turn off the light and the heater or air conditioner after they leave the room. Studies\cite{cite2} show that in some regions, buildings consume more than 40\% of the energy. Saving energy is critical for our environment. There are already some systems which can detect the environment such as temperature or humidity, but there is nearly no system which can detect the usage of a room in order to save energy\cite{cite3}.
 
-We present "Classroom Usage Detection System", which can detect the usage of each study room automatically and then publish the data on the Internet so that all the students in the same campus can obtain all study rooms' usage condition instantly. Also, if there is nobody using the room, we can turn off the light and air conditioner to save energy. The "Classroom Usage Detection System" detects whether there is student using the tables in each room by using vibration sensing method. We sense the vibration by embedded "vibration sensor" on each desk in each study room so that if one student use one table, sensor will receive some signals and send them to the central system. For example, in Figure~\ref{fig:Scene}, if position A is occupied by one student, then the sensor on the table will detect the vibration by the student's moving, typing and writing actions, and the second sensor has fewer vibration so that central system knows only position B is available. With this sensing system, we can collect data about the whole table usage condition in all study rooms in the campus and publish the data to all students so that if any student wants to find an available table to use, they can know which study room and which table they can use instantly without spending lots of time searching for study room one by one anymore. We can also save energy when there is nobody using the room.
+We present "Classroom Usage Detection System", which can detect the usage of each study room automatically and then publish the data on the Internet so that all the students in the same campus can obtain all study rooms' usage condition instantly. Also, if there is nobody using the room, we can turn off the light and air conditioner to save energy. The "Classroom Usage Detection System" detects whether there is student using the tables in each room by using vibration sensing method. We sense the vibration by embedded "vibration sensor" on each desk in each study room so that if one student use one table, sensor will receive some signals and send them to the central system. For example, in Figure~\ref{fig:Scene}, if position A is occupied by one student, then the sensor on the table will detect the vibration by the student's moving, typing and writing actions, and the second sensor has fewer vibration so that central system knows only position B is available. With this sensing system, we can collect data about the whole table usage condition in all study rooms in the campus and publish the data to all students so that if any student wants to find an available table to use, they can know which study room and which table they can use instantly without spending lots of time searching for study room one by one anymore. Since we can detect the usage of a room, we can also turn off the light, heater and air conditioner to save energy when there is no one using the room.
 
  % (see Figure~\ref{fig:figureFamiliarity}).
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.8\linewidth]{figure/scene1.png}
+  \includegraphics[width=1\linewidth]{figure/scene1.png}
   \caption{study room scene with A and B position}
   \label{fig:Scene}
 \end{figure}
- 
+
 \section{Related Work}
-There are some existed tools which are related to our work, such as using cameras and infrared sensors to count the number of people in a room. This kind of system is installed on the entrance of the room so that it can count the number of people coming in and going out. By getting these numbers, we can easily count the number of people in a room. We want to know how many people are using the table but this kind of system can only tell us the number of people in a room. In many cases people just walk in a room to find their friends, chat a little while and then leave the room. But we want to reflect the real usage of a room and that’s why we want to build this system. Although using camera is good way to count the number of people, it might raise some privacy concerns.
+There are some existed tools which are related to our work, such as using cameras and infrared sensors to count the number of people in a room\cite{cite4}. This kind of system is installed on the entrance of the room so that it can count the number of people coming in and going out. By getting these numbers, we can easily count the number of people in a room. We want to know how many people are using the table but this kind of system can only tell us the number of people in a room. In many cases people just walk in a room to find their friends, chat a little while and then leave the room. But we want to reflect the real usage of a room and that's why we want to build this system. Although using camera is good way to count the number of people, it might raise some privacy concerns.
 
 There is another research related to our work which is called Building Occupancy Estimation System\cite{cite1}. It uses some sensors on the ground to detect the footsteps and use these data to calculate the number of user in a room. This idea is quite cool but in our situation, students will be studying in the room and they will not move for a long time so it does not work in our case.
 
@@ -145,12 +145,12 @@ Our system detects a table event caused by natural human actions on a table, suc
 Figure~\ref{fig:DataCollection} shows the data collection board with a piezoelectric sensor in our vibration sensing platform. In our sensing platform, up to three sensors are connected to the data collection board, enabling us to collect data synchronously. To greatly improve its sensitivity, we used epoxy to glue a mass to each piezo sensor. Additionally, the piezoelectric signals are amplified and filtered by a first order active filter based on an operation amplifier. The amplification gain is 50X so that the small signals caused by human actions such as typing a keyboard is amplified enough to be detected. The low pass filter is designed for anti-aliasing, setting cutoff frequency at 160 Hz. The data collection board is based around the arduino UNO.
 
 \subsection{Table Event Detection}
-The table event detection module collects time series of vibration signals from a sensor mounted on the table and determines whether a table event occurred. The system first remove offsets from raw sensor data streams and extracts a signal energy within a time window. The signal energy feature is defined as the sum of the squared values within the time window, which is chosen around 0.2 seconds. The algorithm to determine a table event is based on an anomaly detection model used in several works\cite{cite1}. In this algorithm, the current window’s signal energy is compared to a Gaussian noise model for anomaly detection. If the signal energy exceeds three standard deviations above the mean of the noise, the system identifies it as a table event. The system updates the noise parameters based on streamed non-event data in order to continuously adjust changing environments.
+The table event detection module collects time series of vibration signals from a sensor mounted on the table and determines whether a table event occurred. The system first remove offsets from raw sensor data streams and extracts a signal energy within a time window. The signal energy feature is defined as the sum of the squared values within the time window, which is chosen around 0.2 seconds. The algorithm to determine a table event is based on an anomaly detection model used in several works\cite{cite1}. In this algorithm, the current window's signal energy is compared to a Gaussian noise model for anomaly detection. If the signal energy exceeds three standard deviations above the mean of the noise, the system identifies it as a table event. The system updates the noise parameters based on streamed non-event data in order to continuously adjust changing environments.
 
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.8\linewidth]{figure/dataCollection.jpg}
+  \includegraphics[width=1\linewidth]{figure/dataCollection.jpg}
   \caption{Hardware for data collection}
   \label{fig:DataCollection}
 \end{figure}
@@ -166,7 +166,7 @@ The third model, filtered event counting model (FEC), is based on the second mod
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.8\linewidth]{figure/systemDescrition.pdf}
+  \includegraphics[width=1\linewidth]{figure/systemDescrition.pdf}
   \caption{System Descrition}
   \label{fig:SystemDescrition}
 \end{figure}
@@ -175,14 +175,18 @@ The third model, filtered event counting model (FEC), is based on the second mod
 
 \section{Experiment Method}
 \subsection{Experiment: Study Room Student Detected}
-Experiment 1: Study Room Student Detected
-In this experiment, we are going to detect whether there is any student in the study room. We put the vibration sensor connected with Arduino UNO board embedded in the central of each table in the room. In addition, we set up a threshold value in order to eliminate the environment vibration from other sources, such as the door opening/closing, or other students in the same room. For example, if the vibration value we detected is larger than the threshold, we would consider it as a student existed on this table, otherwise would be taken as the environment disturbance and not be counted as a student. 
-Sampling frequency 1kHz
+
+In this experiment, we are going to detect whether there is any student in the study room. We put the vibration sensor with sampling frequency 1kHz and connect it with Arduino UNO board embedded in the central of each table in the room. In addition, we try to find out a threshold value in order to eliminate the environment vibration from other sources, such as the door opening/closing, or other students in the same room. For example, if the vibration value we detected is larger than the threshold, we would consider it as a student existed on this table, otherwise would be taken as the environment disturbance and not be counted as a student. 
+
+
 Additionally, in general cases, one study room would have not only one table for student to use, which may cause additional vibration detected on a table's sensor from the nearby tables. For instance, although table A has no student usage, the nearby table with one student uses at the same time would also create the vibration to the table A. This vibration caused by nearby table must be smaller than the vibration created by table A' user. Therefore, we also view this vibration as environment disturbance with value lower than threshold and ignore it.
 
+As we can see in Table \ref{tab:table1}, we perform our experiment in four scenario with two experiment study table in one room. The first scenario shows that both tables are absent with one manual vibration produced. With this scenario, we can know the basic environment vibration signal for our environment vibration elimination purpose. 
+The second scenario has two absent table with one student using PC on the third table. In this case, the environment disturbance would enhance significantly compared to the first scenario. However, with the first two scenario, we can know the pattern of the environment vibration signal which we should eliminate in our experiment. The third scenario shows that one table absent while another table has one student who is using PC, and the last scenario indicates that both tables have students using PC at the same time. With the third and fourth scenario, we can know the vibration volume while students are using study table in general cases.
 
 \begin{table}
     \centering
+    \caption{Experimental Condition with Sampling frequency 1kHz}
     \begin{tabular}{|c|l|l|l|}
       \hline
       \tabhead{\#} &
@@ -198,9 +202,8 @@ Additionally, in general cases, one study room would have not only one table for
       \hline
       4 & present & present & both using PC\\
       \hline
-      
     \end{tabular}
-    \caption{Experimental Condition with Sampling frequency 1kHz}
+    
     \label{tab:table1}
   \end{table}
 
@@ -214,6 +217,7 @@ Additionally, in general cases, one study room would have not only one table for
 
 \begin{table*}[h]
   \centering 
+  \caption{The statistical parameter of event counts and the performance of SE, EC, and FEC in each experimental condition}
   \begin{tabular}{|c|c|c|c|c|c|c|}
     \hline
     \multirow{4}{*}{Conditions} &
@@ -233,14 +237,14 @@ Additionally, in general cases, one study room would have not only one table for
       4 & 75.6 & 50.5 & 0.99 & 0.98 & 0.98 & 130\\
       \hline
   \end{tabular}
-  \caption{Experiment}
-  \label{tab:table1}  
+  \label{tab:table2}  
 \end{table*}
+
 
 \begin{figure*}[h]
   \centering
   \includegraphics[width=1\linewidth]{figure/result12.pdf}
-  \caption{Hardware for data collection}
+  \caption{Vibration, energy, and event data for absent-state (left) and present-state (right)}
   \label{fig:Result12}
 \end{figure*}
 
@@ -250,7 +254,7 @@ Additionally, in general cases, one study room would have not only one table for
 In this section, the performance of our system is evaluated. The evaluation is based on experimental results.
 
 \subsection{Event Detection}
-Figure~\ref{fig:Result12} presents typical data we obtained in the present and absent condition: vibration readings from sensing platform, signal energy and table events computed with the event detection module. While the present and absent state is clearly distinguished in the figure, we found that human footsteps can produce significant noise vibrations at tables in the same room. In four experimental conditions, we performed event detection and evaluated the mean of event counts per minute and its standard deviation (shown in Table \ref{tab:table1}). Even if the table is conditioned absent, somebody working something at a short distance from the table, such as using PC at other tables, produces significant amount of table events in error.
+Figure~\ref{fig:Result12} presents typical data we obtained in the present and absent condition: vibration readings from sensing platform, signal energy and table events computed with the event detection module. While the present and absent state is clearly distinguished in the figure, we found that human footsteps can produce significant noise vibrations at tables in the same room. In four experimental conditions, we performed event detection and evaluated the mean of event counts per minute and its standard deviation (shown in Table \ref{tab:table2}). Even if the table is conditioned absent, somebody working something at a short distance from the table, such as using PC at other tables, produces significant amount of table events in error.
 
 
 % \begin{figure}
@@ -268,9 +272,17 @@ Figure~\ref{fig:Result12} presents typical data we obtained in the present and a
 % \end{figure}
 
 
+\begin{figure*}[h]
+  \centering
+  \includegraphics[width=1\linewidth]{figure/eventCounts.pdf}
+  \caption{Event counts and human presence for absent state (left) and present state (right) in condition 3}
+  \label{fig:EventCounts}
+\end{figure*}
 
 \subsection{Human Presence Estimation}
-The three different models for human presence estimation is compared in performance. Table \ref{tab:table1} presents the rates of the present condition in each room condition, the total time identified as the present state by each model divided by the data collection time. Due to the noise vibration mostly originated from somebody’s footsteps, SE model indicates the relatively high present rate in absent table when somebody is working near the table. On the other hand, with EC and FEC model, around 10 percent values are obtained even if somebody is at a distance of one meter from the sensor. While the filtering simultaneous events (FEC) works well in the condition 3, in the condition 2, the value with FEC is worse than that with EC. This implies that there might be some other noise modes that propagates too slow to assume synchronization between neighboring tables.
+In order to verify the effectiveness of removing simultaneous events from the event data, the performance of human presence with normal event counting model (EC) and filtered event counting model (FEC) is evaluated. Figure~\ref{fig:EventCounts} shows the results for a absent state table and a present state table in experimental condition 3. The number of table events was counted by 2.5 minutes and compared to the threshold to estimate human presence. As can been seen, with FEC, we can filter the event counts in the absent state and determine the correct state. This result indicates that although vibration caused by some kinds of human behavior at one table, such as footsteps, can propagate to neighboring tables, these kinds of table event is not dominant in natural human activity. However, in extreme case, such as someone stamping the ground or hitting a table frequently, this FEC method might not work well.
+
+The three different models for human presence estimation is compared in performance. Table \ref{tab:table1} presents the rates of the present condition in each room condition, the total time identified as the present state by each model divided by the data collection time. Due to the noise vibration mostly originated from somebody's footsteps, SE model indicates the relatively high present rate in absent table when somebody is working near the table. On the other hand, with EC and FEC model, around 10 percent values are obtained even if somebody is at a distance of one meter from the sensor. While the filtering simultaneous events (FEC) works well in the condition 3, in the condition 2, the value with FEC is worse than that with EC. This implies that there might be some other noise modes that propagates too slow to assume synchronization between neighboring tables.
 
 
 \section{Future Work}
